@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 230" width="840" height="230" fill="none">
+  <defs>
+    <linearGradient id="headerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A1124"/>
+      <stop offset="50%" stop-color="#0D1B36"/>
+      <stop offset="100%" stop-color="#070C18"/>
+    </linearGradient>
+    <linearGradient id="emeraldTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#0EA5E9" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="glowCircle" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#06B6D4" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="headerGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(56, 189, 248, 0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .title {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      fill: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      fill: #94A3B8;
+    }
+    .status-badge {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      fill: #34D399;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .tag-text {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      fill: #E2E8F0;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.95); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.4; transform: scale(0.95); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-3px); }
+      100% { transform: translateY(0px); }
+    }
+    .pulsing-dot {
+      animation: pulse 2s infinite ease-in-out;
+      transform-origin: 48px 46px;
+    }
+    .floating-card {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Main Card Container -->
+  <rect x="2" y="2" width="836" height="226" rx="16" fill="url(#headerBg)" stroke="url(#borderGrad)" stroke-width="1.5"/>
+  <rect x="2" y="2" width="836" height="226" rx="16" fill="url(#headerGrid)"/>
+  <rect x="2" y="2" width="836" height="226" rx="16" fill="url(#glowCircle)"/>
+
+  <!-- Top Status Pill -->
+  <g transform="translate(36, 32)">
+    <rect width="320" height="28" rx="14" fill="#064E3B" fill-opacity="0.4" stroke="#10B981" stroke-opacity="0.4" stroke-width="1"/>
+    <circle class="pulsing-dot" cx="16" cy="14" r="5" fill="#10B981"/>
+    <circle cx="16" cy="14" r="8" fill="#10B981" fill-opacity="0.25"/>
+    <text class="status-badge" x="32" y="18">OPEN FOR OPPORTUNITIES &amp; COLLABS</text>
+  </g>
+
+  <!-- Main Header & Branding -->
+  <g transform="translate(36, 92)">
+    <text class="title">
+      Hi, I'm <tspan fill="url(#emeraldTeal)">Ravi Shanker Umrao</tspan> 👋
+    </text>
+    <text class="subtitle" x="0" y="32">
+      B.Tech CSE Student • Aspiring AI/ML Engineer & Frontend Dev
+    </text>
+  </g>
+
+  <!-- Dynamic Skill Badges / Highlights -->
+  <g transform="translate(36, 162)">
+    <!-- Pill 1: DSA in C++ -->
+    <g transform="translate(0, 0)">
+      <rect width="135" height="34" rx="8" fill="#132342" stroke="#10B981" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="18" cy="17" r="4" fill="#10B981"/>
+      <text class="tag-text" x="30" y="22">DSA in C++</text>
+    </g>
+
+    <!-- Pill 2: AI & ML Focus -->
+    <g transform="translate(147, 0)">
+      <rect width="160" height="34" rx="8" fill="#132342" stroke="#06B6D4" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="18" cy="17" r="4" fill="#06B6D4"/>
+      <text class="tag-text" x="30" y="22">AI / ML Aspirant</text>
+    </g>
+
+    <!-- Pill 3: Frontend Dev -->
+    <g transform="translate(319, 0)">
+      <rect width="170" height="34" rx="8" fill="#132342" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="18" cy="17" r="4" fill="#38BDF8"/>
+      <text class="tag-text" x="30" y="22">Frontend Engineering</text>
+    </g>
+
+    <!-- Pill 4: GitHub Profile -->
+    <g transform="translate(501, 0)">
+      <rect width="155" height="34" rx="8" fill="#0B1528" stroke="#64748B" stroke-opacity="0.4" stroke-width="1"/>
+      <text class="tag-text" x="18" y="22" fill="#94A3B8">@rraviss0108</text>
+    </g>
+  </g>
+
+  <!-- Decorative Tech Geometry (Right Side) -->
+  <g transform="translate(710, 40)" opacity="0.85">
+    <circle cx="50" cy="50" r="40" stroke="#10B981" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <circle cx="50" cy="50" r="26" stroke="#06B6D4" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="10" fill="url(#emeraldTeal)" fill-opacity="0.6"/>
+    <!-- Orbiting dots -->
+    <circle cx="50" cy="10" r="3.5" fill="#38BDF8"/>
+    <circle cx="85" cy="65" r="3" fill="#10B981"/>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+name: Update Profile Components
+
+on:
+  schedule:
+    # Runs daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+      - 'server.js'
+      - 'package.json'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-components:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate SVG Components
+        run: npm run generate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit & Push Updated Components
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/components/
+          if git diff --staged --quiet; then
+            echo "No component changes to commit."
+          else
+            git commit -m "🎨 chore(components): auto-refresh dynamic SVG profile assets [skip ci]"
+            git push
+          fi

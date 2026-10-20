@@ -1,0 +1,95 @@
+/**
+ * Connect & Socials Card Component (Midnight Blue & Emerald/Teal)
+ */
+
+function renderConnect(data) {
+  const email = data.email || 'itsvravishanker@gmail.com';
+  const insta = '@rraviss0108';
+  const github = 'rraviss0108';
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 160" width="840" height="160" fill="none">
+  <defs>
+    <linearGradient id="connBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A1124"/>
+      <stop offset="50%" stop-color="#0E1B38"/>
+      <stop offset="100%" stop-color="#070C1A"/>
+    </linearGradient>
+    <linearGradient id="connGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="connBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .section-title {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      fill: #34D399;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .conn-desc {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      fill: #94A3B8;
+    }
+    .conn-label {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      fill: #F1F5F9;
+    }
+  </style>
+
+  <!-- Container -->
+  <rect x="2" y="2" width="836" height="156" rx="16" fill="url(#connBg)" stroke="url(#connBorder)" stroke-width="1.5"/>
+
+  <!-- Header & Description -->
+  <g transform="translate(36, 28)">
+    <circle cx="8" cy="8" r="8" fill="#10B981" fill-opacity="0.2"/>
+    <polygon points="5,8 8,5 11,8 8,11" fill="#10B981"/>
+    <text class="section-title" x="24" y="12">LET'S CONNECT &amp; COLLABORATE</text>
+    <text class="conn-desc" x="0" y="38">
+      Open for hackathons, engineering internships, open-source projects, and technical discussions.
+    </text>
+  </g>
+
+  <!-- Contact Pills Row -->
+  <g transform="translate(36, 95)">
+    <!-- Email -->
+    <g transform="translate(0, 0)">
+      <rect width="255" height="36" rx="10" fill="#132342" stroke="#10B981" stroke-opacity="0.4" stroke-width="1"/>
+      <text class="conn-label" x="16" y="23">✉️ ${email}</text>
+    </g>
+
+    <!-- Instagram -->
+    <g transform="translate(268, 0)">
+      <rect width="180" height="36" rx="10" fill="#132342" stroke="#06B6D4" stroke-opacity="0.4" stroke-width="1"/>
+      <text class="conn-label" x="16" y="23">📸 ${insta}</text>
+    </g>
+
+    <!-- GitHub -->
+    <g transform="translate(460, 0)">
+      <rect width="160" height="36" rx="10" fill="#132342" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1"/>
+      <text class="conn-label" x="16" y="23">🐙 @${github}</text>
+    </g>
+
+    <!-- Availability Status -->
+    <g transform="translate(632, 0)">
+      <rect width="144" height="36" rx="10" fill="#064E3B" fill-opacity="0.4" stroke="#10B981" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="16" cy="18" r="4" fill="#10B981"/>
+      <text class="conn-label" x="28" y="23" fill="#34D399">Open to Collab</text>
+    </g>
+  </g>
+</svg>`;
+}
+
+module.exports = renderConnect;
